@@ -1,0 +1,55 @@
+#include <iostream>
+#include "Queue.h"
+
+using namespace std;
+
+int main()
+{
+	Queue que;
+	try{
+		que.dequeue();
+	}catch(int e)
+	{
+		cout<<"dequeue() generated an error for being empty\n";
+	}
+	for(int i=0;i<10;i++)
+		que.enqueue(i);
+	cout<<"print:";
+	que.print();
+	cout<<endl;
+	cout<<endl<<"Size:"<<que.size()<<endl;
+	cout<<"Address of front:"<<que.front();
+	cout<<endl;
+
+	cout<<"removed value:";
+	try{
+		que.dequeue();
+	}catch(int e)
+	{
+		cout<<"dequeue() generated an error for being empty";
+	}
+	cout<<"\nSize:"<<que.size();
+	cout<<endl;
+	
+	cout<<"Empty:"<<que.isEmpty()<<endl;
+	que.print();
+	cout<<endl<<"removed value:";
+	try{
+		que.dequeue();
+	}catch(int e)
+	{
+		cout<<"dequeue() generated an error for being empty";
+	}
+	cout<<endl;
+	que.print();
+	cout<<endl<<"Address of front:";
+	cout<<" ";
+	try{
+		cout<<que.front();
+	}catch(int e)
+	{
+		cout<<"front() generated an error for being emptu.";	
+	}
+	cout<<endl;	
+	return 0;
+}
