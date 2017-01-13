@@ -1,0 +1,117 @@
+function courseInfo.cpp
+
+initialize struct Time
+	declare integer for hour, minute, second
+end Time
+
+initialize struct Course
+	declare string for name, days.
+	declare int for credits
+	declare bool for majorRequirement
+	declare double for aveGrade
+	declare Time for startTime, endTime
+end Course
+
+main
+	declare ifstream file
+	open in.txt with file
+	declare string line
+	getline of file, line
+	declare int num_courses<-atoi(line.c_str()(//to convert char to string, atoi to convert char to int
+	declare array of boolean for startPM and endPM with size of num_courses
+	declare array of my_courses of Type Courses of size num_courses
+	for i is 0 to num_courses
+		for j is 0 to num_courses
+			switch of case j
+				case 0
+					getline of file and store in line
+					my_courses[i].name<-line
+				break
+				case 1
+					getline of file and store in line
+					my_courses[i].credits<-line(using atoi and .c_str() to convert to int)
+				break
+				case 2
+					getline of file and store in line
+					my_courses[i].majorRequirment<-line(using atoi and .c_str() to convert to int)
+				break
+				case 3
+					getline of file and store in line
+					my_courses[i].avgGrade<-line
+				break
+				case 4
+					getline of file and store in line
+					my_courses[i].days=line
+				break
+				case 5
+					getline of file and store in line
+					call getTimeFromUser with my_courses[i].startTime and line
+				break
+				case 6
+					getline of file and store in line
+					getTimeFrom with my_courses[i].endTime and line
+				break
+			end switch
+		end for
+		if my_courses[i].startTime.hour > 12
+			set startPM[i] to true
+			subtract 12 from my_courses[i].startTime.hour 
+		end if
+		else
+			startPM[i] is false
+		end else
+		if my_courses[i].endTime.hour > 12
+			set endPM[i] to true
+			subtract 12 from my_courses[i].endTime.hour 
+		end if
+		else
+			endPM[i] is false
+		end else
+	end for
+
+	print out schedule
+	use two for loops and switch statments to print out all conditions, same structure as above
+	at case 3 use setfill('0') and setw(2) then print start hour, start minute and start second
+	if startPM[i] is false
+		print AM after the time
+	end if
+
+	else
+		print PM after the time
+	use setfill('0') and setw(2) then print end hour, end minute and end second
+	end else
+
+	if endPM[i] is false
+		print AM after the time
+	end if
+
+	else
+		print PM after the time
+	end else
+
+	end switch and nested loop
+end main
+	
+make getTimeFromUser fuction with Type Time &time, string input argument
+	declare string hour, minute, second
+	declare two int variables<-location of (":") using input.find
+	declare string str_length<-input.size()
+
+	hour<-string between (0-first_colon) within input
+	minute<-string between(first_colon+1-second_colon-first_colon-1) within input
+	second<-string between(second_colon+1-str_length-1)
+
+	time.hour<-hour(using atoi and .c_str() to convert string to int)
+	time.minute<-minute(using atoi and .c_str() to convert string to int)
+	time.second<-second(using atoi and .c_str() to convert string to int)
+	if(all times are valid times)
+		return true
+	end if
+	else
+		return false
+	end else
+end getTimeFromUser
+		
+
+
+

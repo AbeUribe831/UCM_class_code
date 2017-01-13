@@ -1,0 +1,16 @@
+function combineString
+	main
+		print "Enter a string"
+		input<- string S
+		print "Enter a number of times: "
+		input <- integer Num
+		call and print combineStr function
+	end main
+	CombineStr (argument is string s)
+		declare string combine
+		take both S and Num input from main as argument
+		for from 0 to Num
+			add S to combine 
+		end for 
+		return combine
+	end ComnbineStr

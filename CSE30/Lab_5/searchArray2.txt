@@ -1,0 +1,60 @@
+function sortArray1
+
+main
+	declare ifsteam file_read
+	declare string line
+	open file "words_in.txt"
+		get line with string line
+		count each line
+	close file
+	declare array of strings
+	open file "words_in.txt"
+		for i=0 to count
+			get line with array(to store each line in each index of arrray)
+		end for
+	close file
+	
+	call checkArraySort(array)
+	if(checkArraySort is false)
+		print "Array is not ascending, end program"
+		end main
+	end if
+	
+	print "input value user wants to find in array"
+	input<-user value
+	
+	call binarySearchR(array, first value, last value, input)
+	if(binarySearchR doesn't find input)
+		print "key value not found"
+	end 
+	else
+		print "key value was found at index" index
+	end else
+end main
+
+checkArraySort(string pointer array) bool function
+	for i=1 to size of array
+		if array[i]< array[i-1]
+			return false
+		end if 
+	end for
+	return true
+end checkArraySort
+
+binarySearchR(string pointer array, int first, int last, string search) int function
+	if(first> last)
+		return -1
+	declare int middle=(first+last)/2
+	while(first<=last)
+		if(arr[middle]=search)
+			return middle
+		end if
+		else if(arr[middle]<search)
+			first=middle+1
+			middle=(first+last)/2
+		end else if
+		else
+			last=middle-1
+			middle=(first+last)/2
+		end else
+end binarySearchR

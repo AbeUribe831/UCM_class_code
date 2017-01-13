@@ -1,0 +1,10 @@
+fuction array3
+	input 2D array size
+	declare 2D array with 2D array size
+	if 2D array is less than 1 or greater than 10, end fuction
+	for loop from 0 to 2D array size	
+		for loop from 0 to 2D array size
+			input for each row
+			count one if input is negative
+	print out quantity of negative numbers
+end

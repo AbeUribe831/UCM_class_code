@@ -1,0 +1,23 @@
+funtion fileIO
+
+main
+	declare ifsteam file_read
+	declare string line
+	open file "words_in.txt"
+		get line with string line
+		count each line
+	close file
+	declare array of strings
+	open file "words_in.txt"
+		for i=0 to count
+			get line with array(to store each line in each index of arrray)
+		end for
+	close file
+	
+	declare ofstream file_out
+	open file "words_in.txt"
+	for i=0 to count
+		file_out ->array[i]
+	end for
+	close file
+end main

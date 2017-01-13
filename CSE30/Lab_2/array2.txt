@@ -1,0 +1,7 @@
+function array2
+
+	input string
+	for loop from string size-1 to 0
+		print each charater
+end
+	

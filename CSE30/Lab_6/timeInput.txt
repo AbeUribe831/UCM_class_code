@@ -1,0 +1,51 @@
+function timeInput.cpp
+
+declare struct Time
+	declare int hour, minute, seconds
+end Time
+
+main
+	declare bool validStar and validEnd
+	declare start, end of type Time 
+	print enter valid start time
+		validStart<-call getTimeFromUser(start)
+	print enter valid end time
+		validEnd<- call getTimeFormUser(end)
+	if validStart and validEnd are true
+		print start
+		print end
+	end if
+	else
+		print invalid time
+	end else
+end main
+
+bool function getTimeFromUser(&time of type Time)
+	declare string input, hour, minute, second
+	store user input in input
+	
+	declare int first_colon, second_colon, str_length
+	first_colon<-location of (":") in input
+	second_colon<-location of (":") in input
+	str_length<-size of input
+
+	hour<-string between (0-first_colon) within input
+	minute<-string between(first_colon+1-second_colon-first_colon-1) within input
+	second<-string between(second_colon+1-str_length-1)
+
+	time.hour<-hour(using atoi and .c_str() to convert string to int)
+	time.minute<-minute(using atoi and .c_str() to convert string to int)
+	time.second<-second(using atoi and .c_str() to convert string to int)
+	if(all times are valid times)
+		return true
+	end if
+	else
+		return false
+	end else
+end getTimeFromUser
+
+void function print24Hour(&time of type Time)
+	print setfill('0'), setw(2), time.hour
+	print setfill('0'), setw(2), time.minute
+	print setfill('0'), setw(2), time.second
+end print24Hour

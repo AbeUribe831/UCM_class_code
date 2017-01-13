@@ -1,0 +1,52 @@
+funtion checkArray
+
+main
+		declare ifsteam file_read
+	declare string line
+	open file "words_in.txt"
+		get line with string line
+		count each line
+	close file
+	declare array of strings
+	open file "words_in.txt"
+		for i=0 to count
+			get line with array(to store each line in each index of array)
+		end for
+	close file
+	call checkArraySort function
+	call sortType
+end main 
+
+checkArraySort(string pointer arr, int array size) int fuction
+	declare bool increasing, decreading 
+	for i=1 to to array size
+		if arr[i]<arr[i-1]
+			increasing is false
+			break
+		end if
+		increasing is true //code only gets here if loop isn't broken
+	end for
+	for j=1 to array size
+		if arr[j]>arr[j-1]
+			decreasing false
+			break
+		end if
+		decreading is true//code only gets here if loop isn't broken
+	end for
+	
+	if increasing is true
+		return 1
+	if decreasing is true
+		return -1
+	if increasing && decreasing is false
+		return 0
+end checkArraySort
+
+sortType(int sort) void function
+	if(sort is 1)
+		print "array is ascending"
+	else if (sort is 0)
+		print "array not sorted"
+	else
+		print "array is decreading"
+end sortType

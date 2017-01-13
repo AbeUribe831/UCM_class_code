@@ -1,0 +1,9 @@
+fuction array1
+
+	input array size
+	end program if array size is less than 1
+	for i<-0 to array size-1
+		check that next value is higher than previous one
+	print whether it is or is not higher
+end
+	

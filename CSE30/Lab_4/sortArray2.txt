@@ -1,0 +1,42 @@
+function sortArray2
+
+	main
+		declare{
+			bool for sort order(ascend or descend)
+			integer for array, array size, input
+		}
+		input<-array size
+		check that array is greater than 0 or end program
+		for i=0 to array size
+			array<-input
+		end for
+		call sortArr
+		print sorted Array
+	end main
+	
+	sortArr(parameters: bool for sort order, int array, int size of array)
+		declare integers: j and save
+		if sort order is true
+			for i=1 to size of array
+				save<-arr[i]
+				j=i
+				while j>0 and save<arr[j-1]
+					arr[j]<-arr[j-1]
+					decrement
+				end while
+				arr[j]=save
+			end for
+		end if
+		else if sort order is false
+			for i=1 to size of array
+				save <-arr[i]
+				j=1
+				while j>0 and save>arr[j-1]
+					arr[j]<-arr[j-1]
+					decrement
+				end while
+				arr[j]=save
+			end for
+		else else if
+	end sortArr
+		

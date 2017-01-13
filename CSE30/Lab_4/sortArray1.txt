@@ -1,0 +1,47 @@
+function sortArray1
+
+	main
+		input<-array size
+		if array size is less than 1,end code
+		else input values in array
+		ask if array will ascend or descend
+		call sorArr
+		print sorted array
+	end main
+	sorArr 	argumentare (bool for ascending or descending array, interger array, integer array size)
+		if true ascend
+			for i=arrSize-1 to 1
+		 		max<-Arr[0]
+				maxIndex<-0
+				for j=1 to i
+					if Arr[j]>Arr[maxIndex]
+						Max<-Arr[j]
+						maxIndex<-j
+					end if
+				end for
+				if maxIndex does not equal i
+					temp<-arr[i]
+					Arr[i]=Arr[maxIndex]
+					Arr[maxIndex]=temp
+				end if 
+			end for
+		end if
+			
+		else if false descend
+			for i arrSize-1 to 1
+				min<-Arr[0]
+				minIndex<-0;
+				for j=1 to i
+					if arr[j]<Arr[minIndex]
+						min<-Arr[j]
+						minIndex<-j
+					end if
+				end for
+				if minIndex does not equal i
+					store<- arr[minIndex]
+					arr[minIndex]<-arr[i]
+					arr[i]<-store
+				end if
+			end for
+		return void
+	end sorArr
