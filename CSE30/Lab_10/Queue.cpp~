@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include "Queue.h"
+
+using namespace std;
+//the constructor inherits from the LinkdList constructor
+Queue:: Queue(): LinkedList()
+{
+}
+Queue::~Queue()
+{
+}
+//instert new value at the back of hte queue
+void Queue::enqueue(int value)
+{
+	insertAtBack(value);
+}
+//removes value from front fo the queue
+int Queue::dequeue()
+{
+	int value;
+	//error check by seeing if the queue is empty
+	if(first!=NULL)
+	{
+		value=first->val;
+		cout<<" "<<value;
+		
+	}
+	//throw a value to the try catch if empty
+	if(!(removeFromFront()))
+		throw(-2);
+}
+int& Queue::front()
+{
+	//error check, is the queue empty?
+	if(first!=NULL){
+		return first->val;
+	}
+	//if empty then throw -1 to try catch to send error message
+	else{
+		throw(-1);
+	}
+}

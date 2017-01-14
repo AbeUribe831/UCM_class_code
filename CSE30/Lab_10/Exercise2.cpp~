@@ -1,0 +1,48 @@
+#include <iostream>
+#include "Queue_char.h"
+
+using namespace std;
+
+int main()
+{
+	Queue_char que;
+	try{
+		que.deQueue_char();
+	}catch(int e)
+	{
+		cout<<"deQueue_char() generated an error for being empty\n";
+	}
+
+	que.enQueue_char('D');
+
+	que.enQueue_char('A');
+
+	cout<<"deQueue_char():";
+	try{
+		que.deQueue_char();
+	}catch(int e)
+	{
+		cout<<"deQueue_char() generated an error for being empty\n";
+	}
+	cout<<"\nsize:"<<que.size()<<endl;
+
+	que.enQueue_char('D');
+	
+	cout<<"isEmpty()"<<que.isEmpty()<<endl<<"front:";
+	try{
+	cout<<que.front();
+	}catch(int e)
+	{
+		cout<<"front() generated an error for beign empty\n";	
+	}
+		que.enQueue_char('T');
+	cout<<"\nfront:";
+	try{
+	cout<<que.front();
+	}catch(int e)
+	{
+		cout<<"front() generated an error for beign empty\n";	
+	}
+	cout<<endl;
+	return 0;
+}
